@@ -8,5 +8,4 @@ public class Constants {
     public static final String EMPTY_STRING = "";
     public static final String FRAGMENT_IMAGES = "FRAGMENT_IMAGES";
     public static final String BASE_URL = "https://pixabay.com/";
-
 }

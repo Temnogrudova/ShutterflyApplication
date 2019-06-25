@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:iconifiedByDefault="false"
-            android:queryHint="Search"
+            android:queryHint="@string/search_view_hint"
             android:layout_centerHorizontal="true" />
         </android.support.v7.widget.Toolbar>
 
@@ -30,8 +30,10 @@
             android:id="@+id/network_progress"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:visibility="gone"
-            android:layout_centerInParent="true"/>
+            android:layout_margin="20dp"/>
     </RelativeLayout>
 
 </layout>

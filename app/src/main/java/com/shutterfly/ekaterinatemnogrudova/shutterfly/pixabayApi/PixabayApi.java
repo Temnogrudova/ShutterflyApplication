@@ -1,7 +1,6 @@
 package com.shutterfly.ekaterinatemnogrudova.shutterfly.pixabayApi;
 
 import com.shutterfly.ekaterinatemnogrudova.shutterfly.models.ImagesResponse;
-
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

@@ -25,7 +25,6 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BindingHol
         mContext = context;
         this.imagePreviewSize = imagePreviewSize;
         sharedPreference = new SharedPreference();
-
     }
 
     @Override
@@ -82,7 +81,6 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BindingHol
             super(rowView);
             ImageView  ivPreview = rowView.findViewById(R.id.iv_preview);
             final ImageView ivLike = rowView.findViewById(R.id.iv_like);
-
             ivPreview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

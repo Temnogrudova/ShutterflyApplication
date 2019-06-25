@@ -34,7 +34,7 @@ public class ImagesFragment extends Fragment implements ImagesContract.View {
     private ImagesAdapter mAdapter;
     private boolean isLoading = false;
     private int page = 1;
-    private String mQuery = "";
+    private String mQuery = EMPTY_STRING;
     private boolean isSubmitedClicked = false;
 
     public static ImagesFragment newInstance() {
@@ -63,8 +63,6 @@ public class ImagesFragment extends Fragment implements ImagesContract.View {
             getImages();
         }
         initImagesListWithOrientationParams();
-        InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         return view;
     }
 
@@ -84,7 +82,7 @@ public class ImagesFragment extends Fragment implements ImagesContract.View {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if(mBinder.searchView.getWidth()>0 && isSubmitedClicked && newText.length() == 0)
+                if(mBinder.searchView.getWidth() > 0 && isSubmitedClicked && newText.length() == 0)
                 {
                     this.onQueryTextSubmit(EMPTY_STRING);
                     isSubmitedClicked = false;
@@ -120,11 +118,6 @@ public class ImagesFragment extends Fragment implements ImagesContract.View {
         return imagePreviewSize;
     }
 
-    private void initImagesList(int imagePreviewSize) {
-        mAdapter = new ImagesAdapter(mImages, getActivity(), imagePreviewSize);
-        mBinder.imagesList.setAdapter(mAdapter);
-    }
-
     private void initImagesListScrollListener() {
         mBinder.imagesList.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -149,19 +142,14 @@ public class ImagesFragment extends Fragment implements ImagesContract.View {
         });
     }
 
+    private void initImagesList(int imagePreviewSize) {
+        mAdapter = new ImagesAdapter(mImages, getActivity(), imagePreviewSize);
+        mBinder.imagesList.setAdapter(mAdapter);
+    }
+
     private void getImages() {
         mPresenter.getImages(mQuery, String.valueOf(page));
         mBinder.networkProgress.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
     }
 
     @Override

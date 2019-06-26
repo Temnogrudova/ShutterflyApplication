@@ -13,7 +13,7 @@ public class ImagesPresenter implements ImagesContract.Presenter {
     private ImagesContract.View mView;
     private Disposable mDisposable;
     private IScheduler mScheduler;
-    private  PixabayService mPixabayService;
+    private PixabayService mPixabayService;
 
     public ImagesPresenter(ImagesContract.View view, PixabayService pixabayService, IScheduler scheduler) {
         mView = view;

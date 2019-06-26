@@ -1,6 +1,5 @@
 package com.shutterfly.ekaterinatemnogrudova.shutterfly.ui;
 
-import android.content.Context;
 import android.content.res.Configuration;
 import android.databinding.DataBindingUtil;
 import android.graphics.Point;
@@ -15,7 +14,6 @@ import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import com.shutterfly.ekaterinatemnogrudova.shutterfly.R;
 import com.shutterfly.ekaterinatemnogrudova.shutterfly.databinding.FragmentImagesBinding;
 import com.shutterfly.ekaterinatemnogrudova.shutterfly.models.Image;

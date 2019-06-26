@@ -18,7 +18,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BindingHol
     private int imagePreviewSize;
     private List<Image> mImages;
     private Context mContext;
-    SharedPreference sharedPreference;
+    private SharedPreference sharedPreference;
 
     public ImagesAdapter(List<Image> images, Context context, int imagePreviewSize) {
         mImages = images;
@@ -53,7 +53,7 @@ public class ImagesAdapter extends RecyclerView.Adapter<ImagesAdapter.BindingHol
         }
     }
 
-    public boolean checkFavoriteItem(Image checkImage) {
+    private boolean checkFavoriteItem(Image checkImage) {
         boolean check = false;
         List<Image> favorites = sharedPreference.getFavorites(mContext);
         if (favorites != null) {
